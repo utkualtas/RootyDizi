@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1004361929692",
+    "firebase_url": "https://rooty-dizi.firebaseio.com",
+    "project_id": "rooty-dizi",
+    "storage_bucket": "rooty-dizi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004361929692:android:2844e8f4374b0b84",
+        "android_client_info": {
+          "package_name": "me.rootylabs.rootydizi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004361929692-9uc9kt01aqell6aoobem55uhobnknldl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmQkM76xpfbk1CiWEmoidnJjSqVvOP_J4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
