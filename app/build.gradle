@@ -15,11 +15,11 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", 'BASE_URL', "http://rootylabs.me/"
+            buildConfigField "String", 'BASE_URL', '"http://rootylabs.me/"'
         }
         debug {
             debuggable true
-            buildConfigField "String", 'BASE_URL', "http://rootylabs.me/"
+            buildConfigField "String", 'BASE_URL', '"http://rootylabs.me/"'
         }
     }
 
