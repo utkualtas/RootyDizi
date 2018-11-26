@@ -6,12 +6,14 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.data.api.ApiService;
+import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
 
 public class MainActivity extends DaggerAppCompatActivity {
@@ -47,8 +49,9 @@ public class MainActivity extends DaggerAppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         binding.mainRecyclerLast.setLayoutManager(layoutManager);
         binding.mainRecyclerLast.setAdapter(mainLastAdapter);
-
-
+        mainLastAdapter.setOnItemClickListener(gridSerie -> {
+            Log.e("UTKU", "InitUI: " + gridSerie.getName());
+        });
     }
 
 

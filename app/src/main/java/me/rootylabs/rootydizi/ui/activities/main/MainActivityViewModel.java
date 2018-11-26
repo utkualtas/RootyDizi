@@ -14,11 +14,12 @@ import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.data.repository.MainRepository;
+import me.rootylabs.rootydizi.utils.RxViewModel;
 
 import static android.support.constraint.Constraints.TAG;
 
 
-public class MainActivityViewModel extends ViewModel {
+public class MainActivityViewModel extends RxViewModel {
 
 
     private final MainRepository mainRepository;
@@ -35,10 +36,10 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     public void loadPage(){
-        mainRepository.
+        disposable.add(mainRepository.
                 getMainContent()
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::addSeries);
+                .subscribe(this::addSeries));
 
     }
 

@@ -21,6 +21,11 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
 
 
     private List<GridSerie> series;
+    interface OnItemClickListener {
+        void onItemClicked(GridSerie gridSerie);
+    }
+
+    private OnItemClickListener onItemClickListener;
 
     @Inject
     public MainLastAdapter() {
@@ -28,15 +33,20 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
     }
 
     public void setSeries(List<GridSerie> series) {
+        Log.e(TAG, "setSeries:  eklendi" );
         this.series.addAll(series);
         notifyDataSetChanged();
+
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     @NonNull
     @Override
     public MainLastItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        return MainLastItemViewHolder.create(parent);
+        return MainLastItemViewHolder.create(parent, onItemClickListener);
     }
 
     @Override
@@ -55,14 +65,19 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
 
         private final RowLastBinding itemFeedBinding;
 
-        public MainLastItemViewHolder(RowLastBinding itemFeedBinding) {
-            super(itemFeedBinding.getRoot());
-            this.itemFeedBinding = itemFeedBinding;
+        static MainLastItemViewHolder create(ViewGroup parent, OnItemClickListener onItemClickListener) {
+            RowLastBinding binding = RowLastBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+            return new MainLastItemViewHolder(binding, onItemClickListener);
         }
 
-        static MainLastItemViewHolder create(ViewGroup parent) {
-            RowLastBinding binding = RowLastBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-            return new MainLastItemViewHolder(binding);
+        public MainLastItemViewHolder(RowLastBinding itemFeedBinding, OnItemClickListener onItemClickListener) {
+            super(itemFeedBinding.getRoot());
+            this.itemFeedBinding = itemFeedBinding;
+            this.itemFeedBinding.rowLastImg.setOnClickListener(view -> {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClicked(itemFeedBinding.getData());
+                }
+            });
         }
 
         public void bind(GridSerie gridSerie) {
