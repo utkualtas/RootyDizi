@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import me.rootylabs.rootydizi.BuildConfig;
 import me.rootylabs.rootydizi.data.MainDataSource;
 import me.rootylabs.rootydizi.data.RequestInterceptor;
 import me.rootylabs.rootydizi.data.api.ApiService;
@@ -47,7 +48,7 @@ public class NetworkModule {
     @Singleton
     ApiService provideRetrofit(OkHttpClient okHttpClient) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://rootylabs.me/")
+                .baseUrl(BuildConfig.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
