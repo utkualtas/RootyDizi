@@ -2,10 +2,8 @@ package me.rootylabs.rootydizi.ui.activities.main;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +12,7 @@ import javax.inject.Inject;
 
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.RowLastBinding;
-
-import static android.support.constraint.Constraints.TAG;
+import timber.log.Timber;
 
 public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLastItemViewHolder> {
 
@@ -33,7 +30,7 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
     }
 
     public void setSeries(List<GridSerie> series) {
-        Log.e(TAG, "setSeries:  eklendi" );
+        Timber.e("setSeries:  eklendi");
         this.series.addAll(series);
         notifyDataSetChanged();
 
@@ -56,7 +53,7 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
 
     @Override
     public int getItemCount() {
-        Log.e(TAG, "getItemCount: "+series.size() );
+        Timber.e("getItemCount: %s", series.size());
         return series.size();
     }
 

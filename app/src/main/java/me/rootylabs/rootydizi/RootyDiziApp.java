@@ -19,6 +19,8 @@ public class RootyDiziApp extends DaggerApplication {
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
+
+
         if (BuildConfig.DEBUG) {
 
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()

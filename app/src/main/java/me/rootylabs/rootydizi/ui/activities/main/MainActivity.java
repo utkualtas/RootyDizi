@@ -5,8 +5,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import javax.inject.Inject;
 
@@ -15,6 +13,7 @@ import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.data.api.ApiService;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
+import timber.log.Timber;
 
 public class MainActivity extends DaggerAppCompatActivity {
 
@@ -46,12 +45,14 @@ public class MainActivity extends DaggerAppCompatActivity {
 
 
     private void InitUI() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.mainRecyclerLast.setLayoutManager(layoutManager);
         binding.mainRecyclerLast.setAdapter(mainLastAdapter);
-        mainLastAdapter.setOnItemClickListener(gridSerie -> {
-            Log.e("UTKU", "InitUI: " + gridSerie.getName());
-        });
+        mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
+    }
+
+    private void RecyclerOnItemClick(GridSerie gridSerie) {
+        Timber.e("RecyclerOnItemClick : %s" ,gridSerie.getName());
     }
 
 
@@ -59,6 +60,7 @@ public class MainActivity extends DaggerAppCompatActivity {
         feedViewModel.getDatas().observe(this, mainLastAdapter::setSeries);
 
     }
+
 
 
 }
