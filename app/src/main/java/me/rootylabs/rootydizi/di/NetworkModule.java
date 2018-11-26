@@ -1,5 +1,8 @@
 package me.rootylabs.rootydizi.di;
 
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
@@ -38,6 +41,7 @@ public class NetworkModule {
         okHttpClient.connectTimeout(TIMEOUT_IN_SEC, TimeUnit.SECONDS);
         okHttpClient.readTimeout(TIMEOUT_IN_SEC, TimeUnit.SECONDS);
         okHttpClient.addInterceptor(new RequestInterceptor());
+        okHttpClient.addNetworkInterceptor(new StethoInterceptor());
         if (false) {
             okHttpClient.addInterceptor(loggingInterceptor);
         }
