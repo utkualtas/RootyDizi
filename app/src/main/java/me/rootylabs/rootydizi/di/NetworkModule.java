@@ -2,12 +2,15 @@ package me.rootylabs.rootydizi.di;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import me.rootylabs.rootydizi.data.MainDataSource;
 import me.rootylabs.rootydizi.data.RequestInterceptor;
 import me.rootylabs.rootydizi.data.api.ApiService;
+import me.rootylabs.rootydizi.data.source.RemoteMainDataSource;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -52,5 +55,14 @@ public class NetworkModule {
 
         return retrofit.create(ApiService.class);
     }
+
+
+    @Provides
+    @Singleton
+    @Named("mainData")
+    MainDataSource provideMainDataSource(ApiService apiService){
+        return new RemoteMainDataSource(apiService);
+    }
+
 
 }

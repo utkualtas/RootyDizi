@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="me.rootylabs.rootydizi.utils.binding.ImageBindingAdapter" />
+
+        <variable
+            name="data"
+            type="me.rootylabs.rootydizi.data.models.GridSerie" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/row_last_Img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:transitionName="image"
+            app:imageUrl="@{data.img}" />
+
+        <TextView
+            android:id="@+id/row_last_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{data.name}"/>
+
+    </LinearLayout>
+</layout>
