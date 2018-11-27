@@ -4,15 +4,10 @@ import android.support.annotation.NonNull;
 
 import java.io.IOException;
 
-import me.rootylabs.rootydizi.BuildConfig;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
-/**
- * Created by mertsimsek on 11/12/2017.
- */
 
 public class RequestInterceptor implements Interceptor {
 
