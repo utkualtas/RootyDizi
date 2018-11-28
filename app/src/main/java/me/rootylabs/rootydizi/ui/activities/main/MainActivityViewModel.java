@@ -1,10 +1,7 @@
 package me.rootylabs.rootydizi.ui.activities.main;
 
-import android.annotation.SuppressLint;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.data.repository.MainRepository;
 import me.rootylabs.rootydizi.utils.RxViewModel;
-
-import static android.support.constraint.Constraints.TAG;
+import timber.log.Timber;
 
 
 public class MainActivityViewModel extends RxViewModel {
@@ -45,7 +41,7 @@ public class MainActivityViewModel extends RxViewModel {
 
     private void addSeries(GridSerie gridSerie) {
 
-        Log.e("STE", "addSeries: " + gridSerie.getName() );
+        Timber.e("addSeries: %s", gridSerie.getName());
         List<GridSerie> gridSeries = new ArrayList<>();
         gridSeries.add(gridSerie);
         contentLiveData.setValue(gridSeries);

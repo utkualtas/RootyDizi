@@ -45,14 +45,14 @@ public class MainActivity extends DaggerAppCompatActivity {
 
 
     private void InitUI() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         binding.mainRecyclerLast.setLayoutManager(layoutManager);
         binding.mainRecyclerLast.setAdapter(mainLastAdapter);
         mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
     }
 
     private void RecyclerOnItemClick(GridSerie gridSerie) {
-        Timber.e("RecyclerOnItemClick : %s" ,gridSerie.getName());
+        Timber.e(gridSerie.getName());
     }
 
 

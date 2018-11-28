@@ -7,12 +7,13 @@ import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 
 import dagger.android.AndroidInjector;
+import dagger.android.HasActivityInjector;
 import dagger.android.support.DaggerApplication;
 import io.fabric.sdk.android.Fabric;
 import me.rootylabs.rootydizi.di.DaggerAppComponent;
 import timber.log.Timber;
 
-public class RootyDiziApp extends DaggerApplication {
+public class RootyDiziApp extends DaggerApplication implements HasActivityInjector {
 
 
     @Override
@@ -41,6 +42,7 @@ public class RootyDiziApp extends DaggerApplication {
         }
 
     }
+
 
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {

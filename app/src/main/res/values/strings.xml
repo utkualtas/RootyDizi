@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Rooty Dizi</string>
+    <string name="sing_in">Sing In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="rooty_labs">Rooty Labs</string>
+    <string name="welcome_to_rootydizi">Welcome to RootyDizi</string>
 </resources>

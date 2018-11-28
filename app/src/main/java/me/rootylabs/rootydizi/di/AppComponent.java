@@ -13,6 +13,7 @@ import me.rootylabs.rootydizi.RootyDiziApp;
         AppModule.class,
         NetworkModule.class,
         ActivityBuilderModule.class,
+        FragmentBuilderModule.class,
         ViewModelModule.class})
 public interface AppComponent extends AndroidInjector<RootyDiziApp> {
     @Component.Builder
