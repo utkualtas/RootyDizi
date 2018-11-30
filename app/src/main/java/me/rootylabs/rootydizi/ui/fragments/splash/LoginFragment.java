@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
+import com.thekhaeng.pushdownanim.PushDownAnim;
+
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
@@ -18,7 +20,6 @@ import me.rootylabs.rootydizi.databinding.FragmentSplashLoginBinding;
 import me.rootylabs.rootydizi.utils.SomeUtils;
 
 public class LoginFragment extends DaggerFragment {
-
 
     FragmentSplashLoginBinding binding;
     Activity activity;
@@ -38,9 +39,20 @@ public class LoginFragment extends DaggerFragment {
 
     private void Init() {
         activity = getActivity();
-        binding.fragmentLoginSignup.setOnClickListener(v -> {
-            someUtils.pushFragment(getActivity().getSupportFragmentManager(), new SignUpFragment(), R.id.activity_splash_root, null); });
         binding.fragmentLoginBg.setOnClickListener(v -> { clearEditTextsFocus(getView()); });
+
+        binding.fragmentLoginSignup.setOnClickListener(v -> {
+            someUtils.pushFragment(getActivity().getSupportFragmentManager(), new SignUpFragment(), R.id.activity_splash_root, null);
+        });
+
+        PushDownAnim.setPushDownAnimTo(binding.fragmentLoginFacebook).setOnClickListener( v -> {
+            //Do somethings when click the facebook button.
+        });
+
+        PushDownAnim.setPushDownAnimTo(binding.fragmentLoginSignIn).setOnClickListener( v -> {
+            //Do somethings when click the sign in button.
+        });
+
     }
 
     private void Observe() {

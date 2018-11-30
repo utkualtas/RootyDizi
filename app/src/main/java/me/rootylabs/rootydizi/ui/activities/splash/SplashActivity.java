@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import javax.inject.Inject;
 
-import dagger.android.HasFragmentInjector;
 import dagger.android.support.DaggerAppCompatActivity;
+import dagger.android.support.HasSupportFragmentInjector;
 import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.data.api.ApiService;
 import me.rootylabs.rootydizi.databinding.ActivitySplashBinding;
@@ -16,7 +16,7 @@ import me.rootylabs.rootydizi.ui.fragments.splash.LoginFragment;
 import me.rootylabs.rootydizi.utils.SomeUtils;
 
 
-public class SplashActivity extends DaggerAppCompatActivity implements HasFragmentInjector {
+public class SplashActivity extends DaggerAppCompatActivity implements HasSupportFragmentInjector {
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;

@@ -3,7 +3,12 @@
     <string name="sing_in">Sing In</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="sign_up">Sign Up</string>
-    <string name="sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="sign_in_with_facebook">SIGN IN WITH FACEBOOK</string>
     <string name="rooty_labs">Rooty Labs</string>
     <string name="welcome_to_rootydizi">Welcome to RootyDizi</string>
+    <string name="signUp">SIGN IN</string>
+    <string name="login_message">Lets start with sign up!</string>
+    <string name="checkbox_term_message">I agree to terms and conditions.</string>
+    <string name="signup">SIGN UP</string>
+    <string name="signin">SIGN IN</string>
 </resources>

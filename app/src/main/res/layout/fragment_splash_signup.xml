@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragments.splash.SignUpFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -9,15 +11,41 @@
             android:id="@+id/fragment_signup_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/signup_bg5"
+            android:src="@drawable/signin_bg"
             android:scaleType="centerCrop"/>
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/shape_gradient_black"
-            android:layout_gravity="bottom">
-        </RelativeLayout>
+            android:weightSum="1">
+
+
+            <RelativeLayout
+                android:id="@+id/fragment_signup_focusable"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_gradient_black"
+                android:layout_gravity="bottom"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_weight="0.5">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:background="#000">
+            </RelativeLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -26,18 +54,42 @@
             android:layout_height="wrap_content"
             android:paddingRight="28dp"
             android:paddingLeft="28dp"
-            android:layout_marginTop="300dp">
+            android:layout_gravity="center|bottom"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+
+            <TextView
+                android:id="@+id/fragment_signup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="4dp"
+                android:text="@string/signUp"
+                android:textSize="46dp"
+                android:textStyle="bold"
+                android:textColor="@color/moreWhite"/>
+            <TextView
+                android:id="@+id/fragment_signup_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/login_message"
+                android:textSize="14dp"
+                android:textColor="@color/lessWhite"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp">
 
-                <android.support.v7.widget.AppCompatEditText
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragment_signup_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Username"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
+                    android:inputType="text"
                     android:paddingBottom="16dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -47,11 +99,13 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp">
 
-                <android.support.v7.widget.AppCompatEditText
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragment_signup_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
+                    android:inputType="textEmailAddress"
                     android:paddingBottom="16dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -61,11 +115,13 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp">
 
-                <android.support.v7.widget.AppCompatEditText
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragment_signup_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
+                    android:inputType="textPassword"
                     android:paddingBottom="16dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -75,19 +131,56 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp">
 
-                <android.support.v7.widget.AppCompatEditText
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragment_signup_rePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:textSize="12dp"
+                    android:hint="rePassword"
+                    android:textSize="16dp"
+                    android:inputType="textPassword"
                     android:paddingBottom="16dp"/>
 
             </android.support.design.widget.TextInputLayout>
 
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="-3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_term_message"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:textColor="@color/lessWhite"/>
+
+                <CheckBox
+                    android:id="@+id/fragment_signup__check_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
 
 
+            </LinearLayout>
 
+            <Button
+                android:id="@+id/fragment_signup__btn_signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textStyle="bold"
+                android:text="@string/signup"
+                android:background="@drawable/shape_ellipse"
+                android:backgroundTint="@color/colorSignIn"/>
 
         </LinearLayout>
 

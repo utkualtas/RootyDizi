@@ -5,4 +5,6 @@
     <color name="colorAccent">#527A37</color>
     <color name="colorFacebook">#3b5998</color>
     <color name="colorSignIn">#75AD4E</color>
+    <color name="lessWhite">#AAAAAA</color>
+    <color name="moreWhite">#EEEEEE</color>
 </resources>

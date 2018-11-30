@@ -7,7 +7,6 @@ import me.rootylabs.rootydizi.ui.fragments.splash.SignUpFragment;
 
 @Module
 public abstract class FragmentBuilderModule {
-
     @ContributesAndroidInjector
     abstract LoginFragment contributeLoginFragment();
 

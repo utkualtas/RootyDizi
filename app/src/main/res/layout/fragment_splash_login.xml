@@ -5,7 +5,6 @@
     tools:context=".ui.fragments.splash.LoginFragment">
 
     <data>
-
         <variable
             name="data"
             type="me.rootylabs.rootydizi.ui.fragments.splash.LoginFragment" />
@@ -47,7 +46,8 @@
                 android:padding="4dp"
                 android:text="@string/rooty_labs"
                 android:textSize="46dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/moreWhite"/>
 
             <TextView
                 android:id="@+id/fragment_login_desc"
@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
                 android:text="@string/welcome_to_rootydizi"
+                android:textColor="@color/lessWhite"
                 android:textSize="14dp" />
 
 
@@ -110,7 +111,7 @@
                 android:layout_marginBottom="14dp"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
-                android:text="@string/sing_in"
+                android:text="@string/signin"
                 android:background="@drawable/shape_ellipse"
                 android:backgroundTint="@color/colorSignIn"/>
 
@@ -119,8 +120,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:layout_marginBottom="14dp">
+                android:paddingRight="30dp">
 
                 <TextView
                     android:id="@+id/fragment_login_forgot"
@@ -128,7 +128,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/forgot_password"
                     android:textSize="12dp"
-                    app:layout_constraintLeft_toLeftOf="parent" />
+                    android:paddingBottom="20dp"
+                    android:paddingTop="2dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:paddingRight="1dp"/>
 
                 <TextView
                     android:id="@+id/fragment_login_signup"
@@ -136,7 +139,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/sign_up"
                     android:textSize="12dp"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    android:paddingBottom="20dp"
+                    android:paddingTop="2dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingLeft="14dp"/>
 
             </android.support.constraint.ConstraintLayout>
 
@@ -145,7 +151,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="28dp"
-                android:layout_marginTop="14dp"
                 android:layout_marginRight="28dp"
                 android:layout_marginBottom="14dp"
                 android:paddingTop="16dp"
