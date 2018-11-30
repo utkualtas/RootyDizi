@@ -25,6 +25,8 @@ public class SignUpFragment extends DaggerFragment {
     View view;
     InputMethodManager inputMethodManager;
 
+    @Nullable
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_splash_signup, container, false);
         view = binding.getRoot();
@@ -35,7 +37,11 @@ public class SignUpFragment extends DaggerFragment {
 
     private void Init() {
         activity = getActivity();
-        binding.fragmentSignupBg.setOnClickListener( v -> { clearEditTextsFocus(v);});
+
+        binding.fragmentSignupBg.setOnClickListener( v -> {
+            clearEditTextsFocus(v);
+        });
+
         PushDownAnim.setPushDownAnimTo(binding.fragmentSignupBtnSignUp).setOnClickListener( v -> {
             //Do somethings when click sign up button.
         });

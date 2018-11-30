@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/fragment_forgot_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_forgot_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/signin_bg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:id="@+id/fragment_forgot_focusable"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.5"
+                android:background="@drawable/shape_gradient_black"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:background="#101010" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp">
+
+
+            <TextView
+                android:id="@+id/fragment_forgot_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="4dp"
+                android:text="@string/forgot_title"
+                android:textColor="@color/moreWhite"
+                android:textSize="46dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_forgot_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/forgot_message"
+                android:textColor="@color/lessWhite"
+                android:textSize="14dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragment_forgot_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="text"
+                    android:paddingBottom="16dp"
+                    android:textSize="16dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_email_message"
+                android:paddingBottom="14dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/fragment_forgot__btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="30dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginLeft="28dp"
+            android:textStyle="bold"
+            android:text="@string/btn_email_confirm"
+            android:background="@drawable/shape_ellipse"
+            android:backgroundTint="@color/colorSignIn"
+            android:layout_gravity="bottom" />
+
+
+    </FrameLayout>
+
+</layout>

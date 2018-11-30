@@ -5,8 +5,7 @@ import javax.inject.Named;
 
 import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
-import me.rootylabs.rootydizi.data.MainDataSource;
-import me.rootylabs.rootydizi.data.models.GridModel;
+import me.rootylabs.rootydizi.data.source.MainDataSource;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 
 public class MainRepository implements MainDataSource {

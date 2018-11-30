@@ -6,9 +6,13 @@
     <string name="sign_in_with_facebook">SIGN IN WITH FACEBOOK</string>
     <string name="rooty_labs">Rooty Labs</string>
     <string name="welcome_to_rootydizi">Welcome to RootyDizi</string>
-    <string name="signUp">SIGN IN</string>
+    <string name="signUp">SIGN UP</string>
     <string name="login_message">Lets start with sign up!</string>
     <string name="checkbox_term_message">I agree to terms and conditions.</string>
-    <string name="signup">SIGN UP</string>
+    <string name="signup">Sign Up</string>
     <string name="signin">SIGN IN</string>
+    <string name="btn_email_confirm">SEND CONFIRM</string>
+    <string name="forgot_title">Forgot</string>
+    <string name="forgot_message">Get your account back</string>
+    <string name="forgot_email_message" >Please enter your email so we can send confirm mail to you.</string>
 </resources>

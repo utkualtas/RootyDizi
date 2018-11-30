@@ -10,10 +10,12 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import me.rootylabs.rootydizi.BuildConfig;
-import me.rootylabs.rootydizi.data.MainDataSource;
+import me.rootylabs.rootydizi.data.source.MainDataSource;
 import me.rootylabs.rootydizi.data.RequestInterceptor;
+import me.rootylabs.rootydizi.data.source.UserDataSource;
 import me.rootylabs.rootydizi.data.api.ApiService;
-import me.rootylabs.rootydizi.data.source.RemoteMainDataSource;
+import me.rootylabs.rootydizi.data.remote.RemoteMainDataSource;
+import me.rootylabs.rootydizi.data.remote.RemoteUserDataSource;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -68,5 +70,11 @@ public class NetworkModule {
         return new RemoteMainDataSource(apiService);
     }
 
+    @Provides
+    @Singleton
+    @Named("userData")
+    UserDataSource provideUserDataSource(ApiService apiService){
+        return new RemoteUserDataSource(apiService);
+    }
 
 }
