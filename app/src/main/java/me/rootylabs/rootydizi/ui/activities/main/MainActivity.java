@@ -10,7 +10,6 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 import me.rootylabs.rootydizi.R;
-import me.rootylabs.rootydizi.data.api.ApiService;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
 import me.rootylabs.rootydizi.utils.SomeUtils;
@@ -25,9 +24,6 @@ public class MainActivity extends DaggerAppCompatActivity {
     ActivityMainBinding binding;
 
     MainActivityViewModel feedViewModel;
-
-    @Inject
-    ApiService apiService;
 
     @Inject
     MainLastAdapter mainLastAdapter;
@@ -55,6 +51,7 @@ public class MainActivity extends DaggerAppCompatActivity {
         binding.mainRecyclerLast.addItemDecoration(new SpaceItemDecoration(someUtils.convertDpToPx(this, 16)));
         binding.mainRecyclerLast.setAdapter(mainLastAdapter);
         mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
+        binding.bottomBar.inflateMenu(R.menu.rooty_menu);
     }
 
     private void RecyclerOnItemClick(GridSerie gridSerie) {

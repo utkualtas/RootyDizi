@@ -19,7 +19,6 @@ public class RemoteUserDataSource implements UserDataSource {
     }
 
 
-
     @Override
     public Flowable<UserContainer> getUserData(String username, String password) {
         return Flowable.create( e -> {
