@@ -108,7 +108,8 @@
                     android:drawablePadding="16dp"
                     android:hint="Username"
                     android:paddingTop="16dp"
-                    android:paddingBottom="16dp" />
+                    android:paddingBottom="16dp"
+                    android:text="utku"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -127,7 +128,8 @@
                     android:drawablePadding="16dp"
                     android:hint="Password"
                     android:paddingTop="16dp"
-                    android:paddingBottom="16dp" />
+                    android:paddingBottom="16dp"
+                    android:text="123456"/>
 
             </android.support.design.widget.TextInputLayout>
 
