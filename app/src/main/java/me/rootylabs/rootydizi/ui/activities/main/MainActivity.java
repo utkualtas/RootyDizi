@@ -13,6 +13,8 @@ import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.data.api.ApiService;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
+import me.rootylabs.rootydizi.utils.SomeUtils;
+import me.rootylabs.rootydizi.utils.SpaceItemDecoration;
 import timber.log.Timber;
 
 public class MainActivity extends DaggerAppCompatActivity {
@@ -29,6 +31,9 @@ public class MainActivity extends DaggerAppCompatActivity {
 
     @Inject
     MainLastAdapter mainLastAdapter;
+
+    @Inject
+    SomeUtils someUtils;
 
 
     @Override
@@ -47,6 +52,7 @@ public class MainActivity extends DaggerAppCompatActivity {
     private void InitUI() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         binding.mainRecyclerLast.setLayoutManager(layoutManager);
+        binding.mainRecyclerLast.addItemDecoration(new SpaceItemDecoration(someUtils.convertDpToPx(this, 16)));
         binding.mainRecyclerLast.setAdapter(mainLastAdapter);
         mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
     }
@@ -58,7 +64,6 @@ public class MainActivity extends DaggerAppCompatActivity {
 
     private void Observe() {
         feedViewModel.getDatas().observe(this, mainLastAdapter::setSeries);
-
     }
 
 

@@ -1,7 +1,10 @@
 package me.rootylabs.rootydizi.utils;
 
+import android.app.Activity;
+import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.DisplayMetrics;
 
 import javax.inject.Inject;
 
@@ -20,6 +23,18 @@ public class SomeUtils {
                 .addToBackStack(backStack)
                 .replace(container, fragment)
                 .commit();
+    }
+
+
+
+
+    public int convertDpToPx(Activity activity, int dp){
+        return Math.round(dp*(activity.getResources().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
+
+    }
+
+    public int convertPxToDp(int px){
+        return Math.round(px/(Resources.getSystem().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
     }
 
 }

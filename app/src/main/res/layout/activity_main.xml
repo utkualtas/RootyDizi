@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/contentLayout"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/mainRecyclerLast"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager" >
-        </android.support.v7.widget.RecyclerView>
 
-    </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="@drawable/shape_gradient_black"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#101010"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_marginTop="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last New Series"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/moreWhite"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow the last new series above"
+                android:textSize="12sp"
+                android:textColor="@color/lessWhite"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mainRecyclerLast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
 </layout>
 

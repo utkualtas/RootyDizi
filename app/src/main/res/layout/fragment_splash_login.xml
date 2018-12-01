@@ -23,14 +23,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/splash_bg"/>
 
-        <!--<RelativeLayout
-            android:id="@+id/fragment_login_focusable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />-->
-
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

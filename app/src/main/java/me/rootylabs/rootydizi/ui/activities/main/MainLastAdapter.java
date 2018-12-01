@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.thekhaeng.pushdownanim.PushDownAnim;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +51,9 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
     @Override
     public void onBindViewHolder(@NonNull MainLastItemViewHolder holder, int position) {
         holder.bind(series.get(position));
+        PushDownAnim.setPushDownAnimTo(holder.itemFeedBinding.rowLastRoot);
+        PushDownAnim.setPushDownAnimTo(holder.itemFeedBinding.rowLastImg);
+
     }
 
     @Override
