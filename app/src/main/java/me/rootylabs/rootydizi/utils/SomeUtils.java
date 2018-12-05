@@ -1,6 +1,6 @@
 package me.rootylabs.rootydizi.utils;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,8 +28,8 @@ public class SomeUtils {
 
 
 
-    public int convertDpToPx(Activity activity, int dp){
-        return Math.round(dp*(activity.getResources().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
+    public int convertDpToPx(Context context, int dp){
+        return Math.round(dp*(context.getResources().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
 
     }
 

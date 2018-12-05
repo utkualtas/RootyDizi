@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalRecyclerGroup">
+        <attr name="titleText" format="string"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="descText" format="string"/>
+        <attr name="descColor" format="color"/>
+        <attr name="recyclerItemSpace" format="integer"/>
+    </declare-styleable>
+</resources>
