@@ -2,6 +2,7 @@ package me.rootylabs.rootydizi.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+import me.rootylabs.rootydizi.ui.fragments.main.FeedFragment;
 import me.rootylabs.rootydizi.ui.fragments.splash.ForgotFragment;
 import me.rootylabs.rootydizi.ui.fragments.splash.SignUpFragment;
 
@@ -12,6 +13,9 @@ public abstract class FragmentBuilderModule {
 
     @ContributesAndroidInjector
     abstract ForgotFragment contributeForgotFragment();
+
+    @ContributesAndroidInjector
+    abstract FeedFragment contributeFeedFragment();
 
 
 }

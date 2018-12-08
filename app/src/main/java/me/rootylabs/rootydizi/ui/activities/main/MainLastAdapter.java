@@ -18,7 +18,7 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
 
 
     private List<GridSerie> series;
-    interface OnItemClickListener {
+    public interface OnItemClickListener {
         void onItemClicked(GridSerie gridSerie);
     }
 

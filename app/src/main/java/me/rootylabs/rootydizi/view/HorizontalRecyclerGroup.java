@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 
 import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.utils.SomeUtils;
@@ -45,6 +46,9 @@ public class HorizontalRecyclerGroup extends LinearLayout {
     private TextView mTitleTextView;
     private TextView mDescTextView;
 
+    private RecyclerView.Adapter mRecyclerAdapter;
+
+    @Inject
     public HorizontalRecyclerGroup(Context context) {
         super(context);
         this.context = context;
@@ -74,6 +78,9 @@ public class HorizontalRecyclerGroup extends LinearLayout {
         } finally {
             a.recycle();
         }
+
+
+
         init();
     }
 
@@ -114,6 +121,7 @@ public class HorizontalRecyclerGroup extends LinearLayout {
     }
 
     public void setRecyclerView(@Nonnull RecyclerView.Adapter<?> adapter){
+        mRecyclerAdapter = adapter;
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new SpaceItemDecoration(someUtils.convertDpToPx(context, mRecyclerItemSpace)));

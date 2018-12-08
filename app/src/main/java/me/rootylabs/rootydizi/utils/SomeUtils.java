@@ -14,7 +14,6 @@ public class SomeUtils {
 
     @Inject
     public SomeUtils(){
-
     }
 
     public void pushFragment(FragmentManager manager, Fragment fragment, int container, String backStack){
@@ -24,9 +23,6 @@ public class SomeUtils {
                 .replace(container, fragment)
                 .commit();
     }
-
-
-
 
     public int convertDpToPx(Context context, int dp){
         return Math.round(dp*(context.getResources().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));

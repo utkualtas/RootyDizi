@@ -2,9 +2,12 @@ package me.rootylabs.rootydizi.ui.activities.splash;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
@@ -32,6 +35,7 @@ public class SplashActivity extends DaggerAppCompatActivity implements HasSuppor
 
     ActivitySplashBinding binding;
     SplashActivityViewModel splashActivityViewModel;
+    InputMethodManager inputMethodManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +48,16 @@ public class SplashActivity extends DaggerAppCompatActivity implements HasSuppor
 
     private void InitUI() {
 
-
+        binding.fragmentLoginRoot.setOnClickListener(v -> {
+            clearEditTextsFocus(v);
+        });
 
         binding.fragmentLoginSignup.setOnClickListener(v -> {
-            someUtils.pushFragment(getSupportFragmentManager(), new SignUpFragment(), R.id.fragment_login_root, null);
+            someUtils.pushFragment(getSupportFragmentManager(), new SignUpFragment(), R.id.fragment_push, null);
         });
 
         binding.fragmentLoginForgot.setOnClickListener(v -> {
-            someUtils.pushFragment(getSupportFragmentManager(), new ForgotFragment(), R.id.fragment_login_root, null);
+            someUtils.pushFragment(getSupportFragmentManager(), new ForgotFragment(), R.id.fragment_push, null);
         });
 
         PushDownAnim.setPushDownAnimTo(binding.fragmentLoginFacebook).setOnClickListener(v -> {
@@ -86,6 +92,12 @@ public class SplashActivity extends DaggerAppCompatActivity implements HasSuppor
     }
 
 
-
+    public void clearEditTextsFocus(View v){
+        if(getCurrentFocus() != binding.fragmentLoginFocusable){
+            inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+            binding.fragmentLoginFocusable.requestFocus();
+        }
+    }
 
 }

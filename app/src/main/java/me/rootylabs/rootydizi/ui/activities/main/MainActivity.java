@@ -8,14 +8,13 @@ import android.os.Bundle;
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
+import dagger.android.support.HasSupportFragmentInjector;
 import me.rootylabs.rootydizi.R;
-import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
+import me.rootylabs.rootydizi.ui.fragments.main.FeedFragment;
 import me.rootylabs.rootydizi.utils.SomeUtils;
-import me.rootylabs.rootydizi.view.HorizontalRecyclerGroup;
-import timber.log.Timber;
 
-public class MainActivity extends DaggerAppCompatActivity {
+public class MainActivity extends DaggerAppCompatActivity implements HasSupportFragmentInjector {
 
     ActivityMainBinding binding;
     MainActivityViewModel feedViewModel;
@@ -24,8 +23,10 @@ public class MainActivity extends DaggerAppCompatActivity {
     ViewModelProvider.Factory viewModelFactory;
     @Inject
     MainLastAdapter mainLastAdapter;
+
     @Inject
     SomeUtils someUtils;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,26 +38,12 @@ public class MainActivity extends DaggerAppCompatActivity {
     }
 
     private void InitUI() {
-        mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
         binding.bottomBar.inflateMenu(R.menu.rooty_menu);
-
-        for (int i = 0; i < 5; i++) {
-            HorizontalRecyclerGroup group = new HorizontalRecyclerGroup(this);
-            group.setRecyclerView(mainLastAdapter);
-            group.setPadding(0, someUtils.convertDpToPx(this, 32), 0, someUtils.convertDpToPx(this, 16));
-            binding.contentContainer.addView(group);
-
-
-        }
-
-    }
-
-    private void RecyclerOnItemClick(GridSerie gridSerie) {
-        Timber.e(gridSerie.getName());
+        someUtils.pushFragment(getSupportFragmentManager(), new FeedFragment(), R.id.activity_main_container, null);
     }
 
     private void Observe() {
-        feedViewModel.getDatas().observe(this, mainLastAdapter::setSeries);
+
     }
 
 }

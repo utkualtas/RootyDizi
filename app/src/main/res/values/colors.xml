@@ -7,4 +7,10 @@
     <color name="colorSignIn">#75AD4E</color>
     <color name="lessWhite">#AAAAAA</color>
     <color name="moreWhite">#EEEEEE</color>
+    <color name="bottom_active">#EEEEEE</color>
+    <color name="bottom_passive">#999999</color>
+    <color name="colorPrimaryRipple">#00000000</color>
+    <color name="bg_bottom">#202020</color>
+
+
 </resources>

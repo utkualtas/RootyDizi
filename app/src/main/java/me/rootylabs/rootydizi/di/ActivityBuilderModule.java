@@ -10,6 +10,7 @@ public abstract class ActivityBuilderModule {
     @ContributesAndroidInjector
     abstract MainActivity contributeMainActivity();
 
+
     @ContributesAndroidInjector
     abstract SplashActivity contributeSplashActivity();
 }

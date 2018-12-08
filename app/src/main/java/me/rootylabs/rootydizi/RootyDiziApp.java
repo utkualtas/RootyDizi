@@ -1,8 +1,6 @@
 package me.rootylabs.rootydizi;
 
 
-import android.os.StrictMode;
-
 import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 
@@ -24,7 +22,7 @@ public class RootyDiziApp extends DaggerApplication implements HasActivityInject
 
         if (BuildConfig.DEBUG) {
 
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+       /*     StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectAll()
                     .penaltyFlashScreen()
                     .penaltyLog()
@@ -33,7 +31,7 @@ public class RootyDiziApp extends DaggerApplication implements HasActivityInject
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
                     .detectAll()
                     .penaltyLog()
-                    .build());
+                    .build());*/
         }
 
         if (BuildConfig.DEBUG) {
@@ -42,6 +40,7 @@ public class RootyDiziApp extends DaggerApplication implements HasActivityInject
         }
 
     }
+
 
 
     @Override

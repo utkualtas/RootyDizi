@@ -26,7 +26,6 @@ public class SplashActivityViewModel extends RxViewModel {
     @Inject
     public SplashActivityViewModel(UserRepository userRepository) {
         this.userRepository = userRepository;
-
     }
 
     public void getLogin(String username, String password) {
