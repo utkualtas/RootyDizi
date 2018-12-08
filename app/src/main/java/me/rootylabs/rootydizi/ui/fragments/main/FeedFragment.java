@@ -18,7 +18,6 @@ import dagger.android.support.DaggerFragment;
 import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.FragmentFeedBinding;
-import me.rootylabs.rootydizi.ui.activities.main.MainLastAdapter;
 import me.rootylabs.rootydizi.utils.SomeUtils;
 import me.rootylabs.rootydizi.view.HorizontalRecyclerGroup;
 import timber.log.Timber;
@@ -33,7 +32,7 @@ public class FeedFragment extends DaggerFragment {
     @Inject
     ViewModelProvider.Factory viewModelFactory;
     @Inject
-    MainLastAdapter mainLastAdapter;
+    FeedLastAdapter feedLastAdapter;
 
     @Inject
     SomeUtils someUtils;
@@ -56,15 +55,13 @@ public class FeedFragment extends DaggerFragment {
     private void Init() {
         activity = getActivity();
         context = getContext();
-        mainLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
+        feedLastAdapter.setOnItemClickListener(this::RecyclerOnItemClick);
         for (int i = 0; i < 5; i++) {
             HorizontalRecyclerGroup group = new HorizontalRecyclerGroup(activity);
-            group.setRecyclerView(mainLastAdapter);
+            group.setRecyclerView(feedLastAdapter);
             group.setPadding(0, someUtils.convertDpToPx(context,32), 0, someUtils.convertDpToPx(context, 16));
             binding.contentContainer.addView(group);
         }
-
-
     }
 
     public void RecyclerOnItemClick(GridSerie gridSerie) {
@@ -72,7 +69,7 @@ public class FeedFragment extends DaggerFragment {
     }
 
     private void Observe() {
-        feedViewModel.getDatas().observe(this, mainLastAdapter::setSeries);
+        feedViewModel.getDatas().observe(this, feedLastAdapter::setSeries);
     }
 
 

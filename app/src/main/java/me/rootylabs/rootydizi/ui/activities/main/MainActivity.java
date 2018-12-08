@@ -12,6 +12,7 @@ import dagger.android.support.HasSupportFragmentInjector;
 import me.rootylabs.rootydizi.R;
 import me.rootylabs.rootydizi.databinding.ActivityMainBinding;
 import me.rootylabs.rootydizi.ui.fragments.main.FeedFragment;
+import me.rootylabs.rootydizi.ui.fragments.main.FeedLastAdapter;
 import me.rootylabs.rootydizi.utils.SomeUtils;
 
 public class MainActivity extends DaggerAppCompatActivity implements HasSupportFragmentInjector {
@@ -22,11 +23,9 @@ public class MainActivity extends DaggerAppCompatActivity implements HasSupportF
     @Inject
     ViewModelProvider.Factory viewModelFactory;
     @Inject
-    MainLastAdapter mainLastAdapter;
-
+    FeedLastAdapter feedLastAdapter;
     @Inject
     SomeUtils someUtils;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package me.rootylabs.rootydizi.ui.activities.main;
+package me.rootylabs.rootydizi.ui.fragments.main;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +14,7 @@ import me.rootylabs.rootydizi.data.models.GridSerie;
 import me.rootylabs.rootydizi.databinding.RowLastBinding;
 import timber.log.Timber;
 
-public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLastItemViewHolder> {
+public class FeedLastAdapter extends RecyclerView.Adapter<FeedLastAdapter.MainLastItemViewHolder> {
 
 
     private List<GridSerie> series;
@@ -25,7 +25,7 @@ public class MainLastAdapter extends RecyclerView.Adapter<MainLastAdapter.MainLa
     private OnItemClickListener onItemClickListener;
 
     @Inject
-    public MainLastAdapter() {
+    public FeedLastAdapter() {
        series = new ArrayList<>();
     }
 
