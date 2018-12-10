@@ -47,6 +47,13 @@ public class FeedFragment extends DaggerFragment {
         feedViewModel = ViewModelProviders.of(this, viewModelFactory).get(FeedFragmentViewModel.class);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_feed, container, false);
         view = binding.getRoot();
+
+
+        if(savedInstanceState != null){
+            Timber.e("Statede veri var!");
+        }
+
+
         Init();
         Observe();
         return view;
@@ -71,6 +78,7 @@ public class FeedFragment extends DaggerFragment {
     private void Observe() {
         feedViewModel.getDatas().observe(this, feedLastAdapter::setSeries);
     }
+
 
 
 }

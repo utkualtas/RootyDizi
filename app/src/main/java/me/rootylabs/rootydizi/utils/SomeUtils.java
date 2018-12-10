@@ -24,6 +24,7 @@ public class SomeUtils {
                 .commit();
     }
 
+
     public int convertDpToPx(Context context, int dp){
         return Math.round(dp*(context.getResources().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
 
